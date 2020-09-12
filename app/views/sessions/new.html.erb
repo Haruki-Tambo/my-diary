@@ -1,0 +1,25 @@
+<h1 class="m-3">ログイン</h1>
+
+<%= form_with(url: login_path, scope: :session, local: true) do |f|%>
+        
+        <div calss="container">
+            <div class="row  justify-content-md-center">
+                <div class="col col-lg-6">
+                    <div class="form-group mb-5">
+                        <%= f.label :name, "名前"%>
+                        <%= f.password_field :name, class: "form-control"%>
+                    </div>
+                    <div class="form-group">
+                        <%= f.label :password, "パスワード"%>
+                        <%= f.password_field :password, class: "form-control"%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="text-center">
+            <%= f.submit "ログイン", class: "btn btn-outline-primary" %>
+        </div>
+    
+<% end %>

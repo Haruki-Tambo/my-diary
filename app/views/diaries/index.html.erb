@@ -1,0 +1,19 @@
+<% if logged_in? %>
+    <% if @diary %>
+        <%= render "diaries_show", diaries: @diaries, diary: @diary%>
+    <% else %>
+        <%= render "not_diary"%>
+    <% end %>
+<% else %>
+    <div class="text-center mt-4 mb-4">
+        <h1>My Diary</h1>
+    </div>
+    <div class="text-center">
+        <div>
+            <a class="btn btn-outline-primary mt-4" href="/signup">新規登録</a>
+        </div>
+        <div>
+            <a class="btn btn-outline-primary mt-4" href="/login">ログイン</a>
+        </div>
+    </div>
+<% end %>
