@@ -50,7 +50,7 @@ class DiariesController < ApplicationController
         redirect_to "/diaries/#{@diary.id}"
       else
         flash.now[:danger] = "日記の作成に失敗しました"
-        render "diaries#new"
+        render :new
       end
     end
     
