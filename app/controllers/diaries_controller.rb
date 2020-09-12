@@ -55,7 +55,6 @@ class DiariesController < ApplicationController
     end
     
     def destroy
-      @diary = Diary.find(params[:id])
       @diary.destroy
       flash[:success] = "日記を削除しました"
       redirect_to "/"

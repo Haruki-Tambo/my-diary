@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   root to: "diaries#index"
   
-  resources :diaries
+  resources :diaries, only: [:show, :edit, :update, :new, :create, :destroy]
   resources :users, only: [:new, :create]
   
 end
