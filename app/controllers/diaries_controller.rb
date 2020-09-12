@@ -6,22 +6,22 @@ class DiariesController < ApplicationController
     def index
         #current_user
         if logged_in?
-          @user = current_user
-          @diaries = @user.diaries
-          @diary = @user.diaries.last
+          # @user = current_user
+          @diaries = current_user.diaries
+          @diary = current_user.diaries.last
         end
     end
     
     def show
         #current_user
-        @user = current_user
+        # @user = current_user
         @diary = Diary.find(params[:id])
-        @diaries = @user.diaries
+        @diaries = current_user.diaries
     end
     
     def edit
         #current_user
-        @user = current_user
+        # @user = current_user
         @diary = Diary.find(params[:id])
     end
     
@@ -43,8 +43,8 @@ class DiariesController < ApplicationController
     
     def create
       #current_user
-      @user = current_user
-      @diary = @user.diaries.build(diary_params)
+      # @user = current_user
+      @diary = current_user.diaries.build(diary_params)
       if @diary.save
         flash[:success] = "日記を作成しました"
         redirect_to "/diaries/#{@diary.id}"
